@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espace Manager · Lumen & Co · edukisto — démo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#c96f96">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Lumen & Co">
+</head>
+<body>
+<div style="background:#0e7490;color:#fff;text-align:center;font-size:.78rem;padding:6px 10px;">Version démo — marque fictive « Lumen &amp; Co ». Données inventées. Accès : <strong>demo</strong> (démonstrateur) ou <strong>manager</strong> (rôle manager)</div>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-edu-wrap"><a href="https://edukisto.win/" target="_blank" rel="noopener" class="brand-edu" title="edukisto — relier & orienter" style="text-decoration:none;display:inline-flex"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 3l5.2 18.2 10.8-5.2-5.2 10.8L61 32l-18.2 5.2 5.2 10.8-10.8-5.2L32 61l-5.2-18.2-10.8 5.2 5.2-10.8L3 32l18.2-5.2-5.2-10.8 10.8 5.2z" fill="#0e7490"/><path d="M32 32c-1.6-2-3-3.1-4.8-3.1a4.7 4.7 0 1 0 0 9.4c1.8 0 3.2-1.1 4.8-3.1 1.6 2 3 3.1 4.8 3.1a4.7 4.7 0 1 0 0-9.4c-1.8 0-3.2 1.1-4.8 3.1z" stroke="#fff" stroke-width="2.2"/></svg></a></div>
+    <div class="brand-name">Lumen <span>&amp; Co</span></div>
+    <div class="brand-tag">Plaisir • Bien-être • Confiance</div>
+  </div>
+  <div class="role-badge">Espace Manager — Laeticia</div>
+</header>
+
+<div class="role-tag">Mode consultation</div>
+
+<div id="loginScreen">
+  <div class="login-box card">
+    <div class="login-brand">Lumen <span>&amp; Co</span></div>
+    <p class="login-sub">Plaisir • Bien-être • Confiance</p>
+    <h3>Espace réservé à l'équipe des démonstrateurs</h3>
+    <p class="login-note">Ce site est l'outil interne de <strong>Laeticia, votre Manager</strong>.<br>Seuls les démonstrateurs de son équipe y ont accès.<br>Version démo — mot de passe : <strong>demo</strong></p>
+    <input type="password" id="loginPass" placeholder="Mot de passe" autocomplete="current-password">
+    <button class="btn" id="loginBtn">Entrer</button>
+    <p class="login-error hidden" id="loginError">Mot de passe incorrect</p>
+  </div>
+</div>
+
+<nav class="tabs" id="tabs">
+  <button class="tab active" data-view="guides">📖 Guides &amp; Process</button>
+  <button class="tab" data-view="faq">❓ FAQ</button>
+  <button class="tab" data-view="contact">✉️ Contact &amp; Modèles</button>
+</nav>
+
+<main>
+  <!-- ================= GUIDES ================= -->
+  <section id="view-guides" class="view active">
+    <div class="grid">
+      <article class="card card-wide">
+        <h3>Bienvenue dans l'équipe de Laeticia 👑</h3>
+        <p class="card-sub">Votre Manager est à vos côtés à chaque étape</p>
+        <ul class="list">
+          <li><strong>Laeticia</strong> définit vos objectifs avec vous, vous forme et vous accompagne personnellement — de votre réunion d'annonce à vos premières démos, et à chaque étape de votre carrière.</li>
+          <li>Envoyez-lui votre <strong>proposition de panier</strong> par e-mail chaque mois (elle valide les priorités : collection Lumen & Co → produits à mettre en avant → Cadeaux démonstrateur).</li>
+          <li>Elle relaye les <strong>formations</strong> et les produits à mettre en avant communiqués par Lumen & Co.</li>
+          <li>En cas de question sur une commande, un SAV ou une démo : <strong>contactez Laeticia en priorité</strong> — elle est là pour ça.</li>
+        </ul>
+        <div class="callout">💛 Rejoindre l'équipe de Laeticia, c'est rejoindre une équipe soudée où chacun(e) progresse à son rythme, bien entouré(e). Bienvenue !</div>
+      </article>
+      <article class="card">
+        <h3>Lumen & Co — notre histoire</h3>
+        <p class="card-sub">Les bases du manuel démonstrateur</p>
+        <ul class="list">
+          <li><strong>2001 :</strong> Lumen & Co voit le jour, porté par la vision novatrice d'une fondatrice passionnée de l'art de la maison et de l'innovation.</li>
+          <li><strong>2021 :</strong> Martine Delvaux (CEO de LumEvents) acquiert le fond de commerce et insuffle une dimension féminine à l'entreprise.</li>
+          <li><strong>Depuis 2023 :</strong> établi à Mont-Saint-Guibert, Lumen & Co fusionne art de vivre et innovation — « Des produits pour illuminer, organiser et simplifier la maison ».</li>
+        </ul>
+        <h4 class="mini-title">Nos valeurs & RSE</h4>
+        <ul class="list compact">
+          <li><strong>Inclusivité profonde</strong> : chacun, quel que soit son genre, son orientation ou son identité, peut explorer et célébrer sa sensualité.</li>
+          <li><strong>Éthique et intégrité</strong> : honnêteté et transparence ; produits non testés sur les animaux.</li>
+          <li><strong>Collaboration harmonieuse</strong> : chaque voix est écoutée, chaque idée respectée.</li>
+          <li><strong>RSE</strong> : panneaux photovoltaïques, produits naturels, numérisation des processus (fin des bons papier), livraisons groupées chez l'hôtesse, démonstrateurs locales (Belgique et Nord de la France).</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Objectifs & revenus démonstrateur</h3>
+        <p class="card-sub">Ce que l'activité peut rapporter</p>
+        <ul class="list">
+          <li><strong>2 démos/mois ≈ 300 €</strong> en moyenne — la liberté de voyager.</li>
+          <li><strong>4 démos/mois ≈ 600 €</strong> en moyenne — de quoi payer ses factures sereinement.</li>
+          <li><strong>10 démos/mois ≈ 1 400 €</strong> en moyenne — un vrai revenu pour un projet (maison, crédit...). Une partie des charges du domicile est déductible.</li>
+          <li><strong>Kit de lancement</strong> : valeur 300 €, prix préférentiel 150 € (sans commission, hors challenges), à commander au plus tard 30 jours avant la réunion d'annonce.</li>
+          <li><strong>Challenge kit complémentaire</strong> : 80 € le jour de la réunion d'annonce → au moins 1 940 € de ventes en 60 jours = bon d'achat de 225 €.</li>
+          <li><strong>Kit définitif</strong> : le kit appartient définitivement après 2 990 € de ventes totales.</li>
+          <li><strong>Bons d'achat mensuels</strong> : un pourcentage du CA du mois précédent (hors frais). Conditions : ≥ 1 démo le mois précédent, avis déposés sur les produits reçus/achetés (code LC50), proposition de panier envoyée à la Manager. Codes actifs jusqu'au 14 à 23 h 59. Priorités : collection Lumen & Co → produits à mettre en avant (communiqués par la Manager) → onglet « Cadeaux démonstrateur » (grands articles 1×/an, consommables 2×/an si active au moins 11 mois sur 12 ; choisir la variation avec le plus de stock).</li>
+          <li><strong>Nouvel An Lumen & Co</strong> : 10 000 € de CA ou 3 recrutements → accès à la soirée.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Évolution de carrière & Back Office</h3>
+        <p class="card-sub">Trois parcours de croissance</p>
+        <ul class="list">
+          <li><strong>Ambassadeur / marraine</strong> : 60 € de bon d'achat dès le 1er recrutement, 100 € au 2e, 140 € au 3e puis 140 € par recrutement subséquent (minimum 1 recrutement tous les 3 mois).</li>
+          <li><strong>démonstrateur Expert</strong> : créer des liens avec son équipe + un pourcentage sur les ventes de l'équipe, avec le soutien de la manager.</li>
+          <li><strong>Manager</strong> : prendre les rênes et développer son équipe (accès aux informations de l'équipe une fois Leader).</li>
+        </ul>
+        <h4 class="mini-title">Back Office — backoffice.lumen-demo.example</h4>
+        <ul class="list compact">
+          <li><strong>Commandes</strong> : suivi transparent (livraison, paiement).</li>
+          <li><strong>Liste des démos</strong> : enregistrement, notes de suivi, liens, clôture.</li>
+          <li><strong>Gestion démonstrateur</strong> : statistiques, objectifs, performances mensuelles.</li>
+          <li><strong>Commissions</strong> : statut et paiement.</li>
+          <li><strong>Front Office</strong> : stock en temps réel.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Lancement & conseils de carrière</h3>
+        <p class="card-sub">Bien démarrer chez Lumen & Co</p>
+        <ol class="steps compact">
+          <li>Définir ses objectifs avec sa manager (kit de lancement jusqu'à 30 jours avant la réunion d'annonce).</li>
+          <li>Allouer du temps spécifique dans son emploi du temps.</li>
+          <li>Exprimer sa motivation et préparer sa réunion d'annonce avec sa manager.</li>
+          <li>Participer activement aux formations de la manager.</li>
+          <li>Planifier des rencontres individuelles avec ceux qui ne peuvent pas venir à la réunion d'annonce.</li>
+          <li>Utiliser une liste de contacts à jour ; communication régulière avec l'hôtesse avant l'atelier.</li>
+          <li>Bien préparer l'événement, animer de manière concise et authentique, clôturer dans un cadre confidentiel, photographier sa table en début de présentation.</li>
+        </ol>
+        <div class="callout">💡 Planifier 4 à 6 démos pour démarrer (les 2 premières en tant qu'hôtesse), viser en moyenne 2 reprises de démo par démo, une porte ouverte par mois possible.</div>
+      </article>
+      <article class="card">
+        <h3>Suivi d'une démo reçue par Lumen & Co</h3>
+        <p class="card-sub">De la réception au lancement des préventes</p>
+        <ol class="steps">
+          <li><strong>Réception de la demande</strong> transférée par l'équipe Lumen & Co.</li>
+          <li><strong>Contacter la cliente</strong> : le jour du transfert (si reçu avant 20 h) ou le lendemain au plus tard.</li>
+          <li><strong>Pas de réponse ?</strong> SMS + e-mail. Toujours rien : e-mail le lendemain au plus tard.</li>
+          <li><strong>Elle répond</strong> : RDV (téléphone, visio ou en personne) pour informer et cerner ses attentes.</li>
+          <li><strong>Planification</strong> puis suivi : J-3 mois, J-2 mois, J-1 mois (création du groupe avec tous les participants), J-15 jours (début des préventes), J-7 jours, J-1 jour.</li>
+        </ol>
+        <div class="callout">💡 Soignez la communication : relisez toujours vos messages avec l'aide de ChatGPT ou Gemini. Un message clair et sans fautes inspire confiance !</div>
+      </article>
+      <article class="card">
+        <h3>Augmenter son panier moyen</h3>
+        <p class="card-sub">Conseiller avec le cœur</p>
+        <ol class="steps compact">
+          <li>Analyser le panier actuel (grande pièce déjà présente ?).</li>
+          <li>Identifier son besoin profond (solo/couple, découverte/détente/intense, occasion spéciale ?).</li>
+          <li>Proposer des produits complémentaires : grande pièce + entretien + rangement + décoration + accessoire + petit extra.</li>
+          <li>Montrer les bénéfices (plaisir, confort, sécurité, durabilité, rapport qualité-prix).</li>
+          <li>Toujours proposer un petit plus accessible (mini-bougie parfumée, chiffon microfibre, sachet parfumé, petit coffret...).</li>
+          <li>Faire choisir plutôt que demander : « Tu préfères la bougie de massage ou le gel ? »</li>
+          <li>Vérifier avant de conclure : « Est-ce qu'il te manque quelque chose pour profiter pleinement de tes produits ? »</li>
+        </ol>
+        <div class="callout">💛 Règle d'or : 1 produit principal + 1 indispensable + 1 petit plaisir = une expérience réussie !</div>
+      </article>
+      <article class="card">
+        <h3>Les événements en démo</h3>
+        <p class="card-sub">Anniversaire • EVJF/EVG • Baby shower</p>
+        <ul class="list">
+          <li><strong>Forfait animation : 50 €</strong> (offert dès 350 € de ventes). Sinon, l'hôte commande une carte cadeau de 50 € sur votre référence.</li>
+          <li><strong>Cadeau événement :</strong> anniversaire (± 1 mois, CI), EVJF (max 1 mois avant le mariage, faire-part), baby shower (justificatif de grossesse). Toujours si ≥ 350 € de ventes, choisi dans le document interne et mentionné dans la note de commande.</li>
+          <li><strong>Pré-commande</strong> avant l'événement pour la déco (moules à gâteau, glaçons, pailles, gobelets, jeux...).</li>
+          <li><strong>Animation</strong> plus courte qu'une démo classique — demander le temps réservé, incluant les commandes.</li>
+          <li><strong>Jeux :</strong> duo explosif (ballons), plasticine yeux bandés, mariée en binôme, saute-et-gagne.</li>
+          <li><strong>10 % des ventes en cadeaux</strong> comme pour toute démo.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Clôture d'une démo</h3>
+        <p class="card-sub">Guides pour l'hôte</p>
+        <ul class="list">
+          <li><strong>&lt; 250 € :</strong> l'hôte commande dans la démo + note « Pour faire partir la démo – Réf. de la démo : ... » + livraison de la démo.</li>
+          <li><strong>250–350 € :</strong> idem + un cadeau surprise est automatiquement ajouté.</li>
+          <li><strong>&gt; 350 € :</strong> clôture de la démo → code promo automatique (e-mail/SMS) → commande des cadeaux avec le code + note (anniversaire, EVJF, reprise...) + livraison des cadeaux.</li>
+        </ul>
+        <h4 class="mini-title">Cadeaux hors code promo</h4>
+        <ul class="list compact">
+          <li><strong>Anniversaire :</strong> ± 1 mois de la date, preuve = carte d'identité.</li>
+          <li><strong>EVJF :</strong> faire-part, max 1 mois avant le mariage.</li>
+          <li><strong>Reprise :</strong> commande dans une démo Lumen & Co il y a moins de 6 mois (ou moins d'1 an si elle était l'hôte), avec réf. de la démo initiale.</li>
+          <li>Demande via le formulaire de contact du site avec justificatif — validation par l'équipe.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Après la démo — fidéliser</h3>
+        <p class="card-sub">Obtenir une nouvelle démo</p>
+        <ol class="steps compact">
+          <li><strong>Commandes individuelles</strong> dans une pièce à part : écouter, conseiller, vérifier que tout est clair.</li>
+          <li><strong>Avis Google</strong> : demander un avis avec le prénom de la démonstrateur (QR code ou fiche Business Google).</li>
+          <li><strong>« Je n'ai pas les moyens »</strong> → proposer une démo chez elle : produits en cadeaux via les ventes, aucune obligation d'achat.</li>
+          <li><strong>Fixer une date en 3 étapes</strong> : le mois ? → début ou fin de mois ? → quel jour de la semaine ?</li>
+          <li><strong>Suivre les intéressées</strong> (hôte, EVJF, produits, devenir démonstrateur) : tout noter dans la note de la démo au back office (nom, téléphone, intérêt, date de relance).</li>
+        </ol>
+      </article>
+      <article class="card">
+        <h3>Suivi des commandes points</h3>
+        <p class="card-sub">De la réception à la validation des avis</p>
+        <ol class="steps">
+          <li><strong>Réception de la commande points</strong> offerte par Lumen & Co.</li>
+          <li><strong>Ajouter les avis</strong> de tous les produits reçus, dans le même ordre.</li>
+          <li><strong>Faire les captures</strong> : kit de départ (si concerné), colis et produits, intégrés dans le corps du mail.</li>
+          <li><strong>Rédiger le mail</strong> : panier souhaité, formule choisie, stock, priorités.</li>
+          <li><strong>Envoyer le mail à Martine</strong> au plus tard le 12 du mois (recommandé : le 10).</li>
+          <li><strong>Traitement</strong> : vérification et confirmation par Martine.</li>
+        </ol>
+        <div class="badge-row"><span class="badge">Deadline : 12 du mois</span><span class="badge badge-alt">Idéal : 10</span></div>
+      </article>
+      <article class="card">
+        <h3>Les deux formules</h3>
+        <p class="card-sub">Commande points démonstrateur</p>
+        <ul class="list">
+          <li><strong>Formule 4 %</strong> — idéale pour compléter la table de démo. 1 cosmétique par type de produit et par année (2×/an si 2 démos/mois sur les 12 derniers mois). 1 exemplaire par grande pièce.</li>
+          <li><strong>Formule 2 %</strong> — idéale quand la table est complète. Parfums/couleurs différents d'un même produit possibles une fois par an et par parfum/couleur. 1 exemplaire par grande pièce.</li>
+        </ul>
+        <h4 class="mini-title">Priorités de commande</h4>
+        <ol class="steps compact"><li>Produits de la marque Lumen & Co</li><li>Produits de l'album Must Have</li><li>Autres articles de l'onglet Cadeaux démonstrateur</li></ol>
+      </article>
+      <article class="card">
+        <h3>SAV — produit défectueux</h3>
+        <p class="card-sub">Logigramme pour la démonstrateur</p>
+        <ol class="steps">
+          <li><strong>Le client signale un produit défectueux</strong> (dans les délais de garantie, voir CGV) en contactant sa démonstrateur.</li>
+          <li><strong>RDV en visio</strong> au plus vite : comprendre le problème, vérifier l'utilisation, identifier si le produit semble réellement défectueux.</li>
+          <li><strong>Pas défectueux ?</strong> Expliquer conseils d'utilisation et vérifications ; nouvelle analyse possible si le problème persiste.</li>
+          <li><strong>Défectueux ?</strong> Demander une vidéo montrant le défaut + formulaire SAV en ligne par le client. La démonstrateur reçoit une copie par e-mail et la transfère au bureau.</li>
+          <li><strong>Récupération du produit</strong> : en main propre (chez le client ou via une démonstrateur plus proche) ou envoi par étiquette de retour (frais pris en charge par la démonstrateur, déductibles, inclus dans les 24,2 % à 36 % de commissions). Bien emballer, conserver le numéro de suivi.</li>
+          <li><strong>Analyse par le bureau</strong> puis, si le défaut est confirmé, renvoi d'un produit neuf ou équivalent dans les points de la démonstrateur.</li>
+        </ol>
+      </article>
+      <article class="card">
+        <h3>Demande d'échange après livraison</h3>
+        <p class="card-sub">Logigramme client</p>
+        <ul class="list">
+          <li><strong>Délai : 24 h</strong> après livraison, sinon aucun échange ni bon à valoir.</li>
+          <li><strong>En démo :</strong> pas de remboursement — bon à valoir uniquement.</li>
+          <li><strong>Hors démo :</strong> remboursement possible selon les CGV.</li>
+          <li><strong>Sextoys :</strong> scellé retiré ou boîte ouverte = pas d'échange.</li>
+          <li><strong>Cosmétiques :</strong> pompe activée = pas d'échange ; produit non ouvert et intact.</li>
+          <li><strong>Textiles (chiffons, torchons) :</strong> si lavés, plus d'échange. Autres textiles : non portés, emballage d'origine, analyse à réception.</li>
+          <li><strong>Retour aux frais du client</strong> : Point relais Mondial Relais Déco Attitude de Corbais OU distributeur Bpost Jaurdinia de Mont-Saint-Guibert.</li>
+          <li><strong>Réponse :</strong> échange accepté → bon à valoir (valeur payée) ; refus → explication du motif.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="view-faq" class="view">
+    <div class="faq-head">
+      <div>
+        <h2>FAQ des démonstrateurs</h2>
+        <p>Les questions fréquentes de l'équipe. La manager peut ajouter, modifier ou supprimer des entrées à tout moment : les changements sont enregistrés automatiquement dans ce navigateur.</p>
+      </div>
+      <div class="faq-actions">
+        <input type="search" id="faqSearch" placeholder="Rechercher..." autocomplete="off">
+        <select id="faqCategory" aria-label="Catégorie"><option value="">Toutes catégories</option></select>
+      </div>
+    </div>
+    <div class="faq-form card" id="faqForm">
+      <h3 id="faqFormTitle">➕ Ajouter une question</h3>
+      <div class="faq-form-row">
+        <input type="text" id="newQuestion" placeholder="La question...">
+        <select id="newCategory"><option value="Général">Général</option><option value="Commandes points">Commandes points</option><option value="Démos">Démos</option><option value="Échanges & SAV">Échanges & SAV</option><option value="Événements">Événements</option><option value="Produits">Produits</option><option value="Recrutement">Recrutement</option><option value="Carrière & Revenus">Carrière & Revenus</option></select>
+      </div>
+      <textarea id="newAnswer" rows="4" placeholder="La réponse..."></textarea>
+      <div class="faq-form-buttons">
+        <button class="btn" id="saveFaq">Enregistrer</button>
+        <button class="btn btn-ghost hidden" id="cancelEdit">Annuler</button>
+      </div>
+    </div>
+    <div id="faqList"></div>
+    <p class="empty" id="faqEmpty">Aucune question ne correspond à votre recherche.</p>
+    <div class="faq-admin">
+      <button class="btn btn-ghost" id="exportFaq">⬇ Exporter (JSON)</button>
+      <button class="btn btn-ghost" id="importFaq">⬆ Importer</button>
+      <input type="file" id="importFile" accept="application/json" hidden>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="view-contact" class="view">
+    <div class="grid">
+      <article class="card">
+        <h3>Modèles de mails — cycle de la démo</h3>
+        <p class="card-sub">Dans l'ordre chronologique, du premier contact à la relance</p>
+        <div class="tpl">
+          <h4 class="mini-title">SMS de premier contact</h4>
+          <pre>« Bonjour, je suis conseillère Lumen & Co, quand puis-je vous contacter à votre meilleure convenance pour votre démo ? :-) »</pre>
+          <button class="btn btn-small copy-btn">Copier</button>
+        </div>
+        <div class="tpl">
+          <h4 class="mini-title">Relance sans réponse (après appel + SMS)</h4>
+          <pre>Objet : Votre demande de démo Lumen & Co
+
+Bonjour [Prénom],
+
+Je me permets de vous recontacter suite à votre demande de démo Lumen & Co.
+Quand puis-je vous joindre pour en discuter ensemble ?
+Je suis disponible et je m'adapte à vos disponibilités.
+
+Au plaisir d'échanger avec vous !
+
+Bien à vous,
+[Votre prénom] — Conseillère Lumen & Co</pre>
+          <button class="btn btn-small copy-btn">Copier</button>
+        </div>
+        <div class="tpl">
+          <h4 class="mini-title">Récapitulatif à J-3 mois</h4>
+          <pre>Objet : Préparons ensemble votre démo Lumen & Co !
+
+Bonjour [Prénom],
+
+Je suis ravie de vous accompagner pour votre démo Lumen & Co prévue le [date].
+Afin de préparer ce moment dans les meilleures conditions, je vous confirme
+notre rendez-vous et reste disponible pour répondre à toutes vos questions.
+Vous pouvez déjà commencer à réfléchir aux personnes que vous souhaiteriez
+inviter. Nous avancerons ensemble étape par étape.
+
+À très bientôt,
+[Votre prénom] — Conseillère Lumen & Co</pre>
+          <button class="btn btn-small copy-btn">Copier</button>
+        </div>
+        <div class="tpl">
+          <h4 class="mini-title">Invitations à J-2 mois</h4>
+          <pre>Objet : Votre démo Lumen & Co approche... pensons aux invitations !
+
+Bonjour [Prénom],
+
+Notre démo Lumen & Co approche doucement et il est temps de commencer à
+penser à vos invitées. Je vous conseille de préparer votre liste et de
+commencer à leur parler de la soirée. Une invitation personnelle fonctionne
+beaucoup mieux qu'un simple message collectif.
+Je peux également vous fournir des visuels et des exemples de textes pour
+vous aider. N'hésitez pas à me dire où vous en êtes.
+
+À très bientôt,
+[Votre prénom] — Conseillère Lumen & Co</pre>
+          <button class="btn btn-small copy-btn">Copier</button>
+        </div>
+        <div class="tpl">
+          <h4 class="mini-title">Message dans le groupe — J-15</h4>
+          <pre>Bonjour tout le monde 😊
+
+Nous voilà déjà à 14 jours de la présentation Lumen & Co ❤️
+J'espère que vous, comme moi, vous êtes impatients d'y être 😊
+
+Comme promis, voici le lien de la présentation : [Lien vers la démo]
+Il est précieux de bien vérifier que vous êtes « en mode démo »
+une fois connectée ❤️ Merci d'avance pour notre hôtesse !
+
+Rassurez-vous, je serai là pour vous accompagner pas à pas 👍
+Il est important de ne pas valider votre commande sans moi.
+Le jour de la présentation, on installera un endroit au calme
+afin que je puisse répondre en toute discrétion à vos questions
+si nécessaire ❤️ Pour ces mêmes raisons, la commande et le
+paiement se feront depuis votre smartphone.
+
+Je suis également disponible par appel ou en MP si vous
+souhaitez faire un achat avant le jour J sur le lien de démo
+afin de participer aux cadeaux de notre hôtesse 😊</pre>
+          <button class="btn btn-small copy-btn">Copier</button>
+        </div>
+        <div class="tpl">
+          <h4 class="mini-title">Rappel à l'hôtesse — 15 jours avant (lien démo actif)</h4>
+          <pre>Objet : Votre démo Lumen & Co approche !
+
+Bonjour [Prénom de l'hôtesse],
+
+Juste un petit rappel que notre démonstration Lumen & Co aura
+lieu le [Date] à [Heure]. Nous sommes impatientes de vous rencontrer,
+vous et vos invités, et de passer un bon moment ensemble !
+
+Le lien vers votre démo est à présent actif :-) : [Lien vers la démo]
+
+Si vous avez des questions d'ici là, je suis disponible.
+Merci encore pour votre hospitalité !
+
+[Votre nom]</pre>
+          <button class="btn btn-small copy-btn">Copier</button>
+        </div>
+        <div class="tpl">
+          <h4 class="mini-title">Confirmation — la veille de l'événement</h4>
+          <pre>Objet : C'est pour demain !
+
+Bonjour [Prénom de l'hôtesse],
+
+C'est pour demain ! Nous avons hâte de venir chez vous pour la
+démonstration Lumen & Co. Nous vous recommandons d'envoyer le lien vers
+votre démo dès à présent à ceux qui ne pourront malheureusement pas
+être présents :-) : [Lien vers la démo]
+
+Avez-vous tout ce dont vous avez besoin de notre part ?
+
+À demain,
+[Votre nom]</pre>
+          <button class="btn btn-small copy-btn">Copier</button>
+        </div>
+        <div class="tpl">
+          <h4 class="mini-title">Remerciements — le lendemain de la démo</h4>
+          <pre>Objet : Merci pour ce beau moment !
+
+Bonjour [Prénom de l'hôtesse],
+
+Un grand merci pour votre accueil chaleureux hier soir ! J'espère que
+vous et vos invités avez apprécié la démonstration Lumen & Co.
+Si vous avez des retours ou des questions, je serais ravie de les
+entendre. Aussi, si certains de vos invités souhaitent commander des
+produits supplémentaires, n'hésitez pas à me le faire savoir.
+
+Merci encore et à très bientôt,
+[Votre nom]</pre>
+          <button class="btn btn-small copy-btn">Copier</button>
+        </div>
+        <div class="tpl">
+          <h4 class="mini-title">Proposition de collaboration future</h4>
+          <pre>Objet : Et si on refaisait l'expérience ?
+
+Bonjour [Prénom de l'hôtesse],
+
+J'espère que vous allez bien. Encore merci pour la démonstration
+Lumen & Co chez vous la semaine dernière. J'aimerais savoir si vous
+seriez intéressée par l'organisation d'une nouvelle démo à l'avenir
+ou par d'autres formes de collaboration avec nous.
+
+Votre soutien est précieux pour nous et nous aimerions continuer
+à travailler avec vous.
+
+Bien cordialement,
+[Votre nom]</pre>
+          <button class="btn btn-small copy-btn">Copier</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Modèles de mails — routine mensuelle</h3>
+        <p class="card-sub">Commande points du mois</p>
+        <div class="tpl">
+          <h4 class="mini-title">Commande points du mois</h4>
+          <pre>Objet : Commande points – [Votre prénom] – [Mois]
+
+Bonjour Martine,
+
+Vous trouverez ci-dessous ma demande de commande points du mois de [Mois] :
+
+1. CAPTURES DES COMMANDES (depuis ma dernière commande points)
+2. AVIS DES PRODUITS (tous les avis des produits reçus, dans le même ordre)
+3. MON PANIER SOUHAITÉ (liste des produits souhaités : ...)
+
+Merci pour ton retour.
+
+À très bientôt,
+[Votre prénom] — démonstrateur Lumen & Co</pre>
+          <button class="btn btn-small copy-btn">Copier</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Conseils réseaux sociaux & promotion</h3>
+        <p class="card-sub">Gagner en visibilité</p>
+        <ul class="list compact">
+          <li>Profils professionnels complets (Facebook, Instagram, TikTok) : belle photo, bio engageante, liens vers les pages officielles Lumen & Co.</li>
+          <li>Publier <strong>3 à 4 fois par semaine</strong> ; varier les contenus : vidéos, tutoriels, témoignages, stories, sondages/Q&A.</li>
+          <li>Hashtags : #SoftLove #BienÊtre #SoinPersonnel #BeautéNaturelle + hashtags tendance.</li>
+          <li>Répondre rapidement aux commentaires/MP ; poser des questions ouvertes ; partager les contenus clients avec leur accord.</li>
+          <li>Mesurer avec Facebook Insights / Instagram Analytics (engagement, portée, conversions) et ajuster.</li>
+          <li>Aborder les gens naturellement ; face à un refus, rester positive et proposer plus tard.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Points de retour (échanges)</h3>
+        <p class="card-sub">Renvoi aux frais du client</p>
+        <ul class="list">
+          <li><strong>Point relais Mondial Relais</strong> — Déco Attitude de Corbais</li>
+          <li><strong>Distributeur Bpost</strong> — Jaurdinia de Mont-Saint-Guibert</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Rappels importants</h3>
+        <ul class="list">
+          <li>Mail de commande points : <strong>au plus tard le 12</strong> du mois (idéal le 10).</li>
+          <li>Demande d'échange client : <strong>dans les 24 h</strong> après livraison.</li>
+          <li>Produits points : uniquement pour l'activité démonstrateur — jamais à titre privé, ni offerts, ni revendus. Ils restent sur la table de démo jusqu'au retrait officiel du catalogue.</li>
+          <li>Photos des tables : publication régulière dans le post prévu à cet effet.</li>
+          <li>Commande LCS0 ≥ 150 € payée dans le point 1 → captures d'avis non nécessaires.</li>
+          <li>Communication : toujours relire avec ChatGPT/Gemini avant d'envoyer.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Lumen & Co — La maison qui brille • Qualité • Convivialité</p>
+  <p class="small">Espace interne réservé à l'équipe démonstrateur de Laeticia. Ensemble, créons plus de moments uniques !</p>
+  <p class="small credits"><span class="sig-line">──</span> <a href="https://edukisto.win/" target="_blank" rel="noopener" title="edukisto — relier & orienter" style="color:#0e7490;text-decoration:none"><svg width="14" height="14" viewBox="0 0 64 64" style="vertical-align:-2px"><path d="M32 3l5.2 18.2 10.8-5.2-5.2 10.8L61 32l-18.2 5.2 5.2 10.8-10.8-5.2L32 61l-5.2-18.2-10.8 5.2 5.2-10.8L3 32l18.2-5.2-5.2-10.8 10.8 5.2z" fill="currentColor"/></svg> edukisto</a> <span class="sig-line">──</span></p>
+  <p class="small">Espace Manager — Laeticia · © <span id="year"></span></p>
+</footer>
+
+<div id="update-banner" class="update-banner hidden">
+  <span>🔄 Une mise à jour est disponible</span>
+  <button id="updateBtn" class="btn btn-small">Actualiser</button>
+</div>
+
+<div id="toast">Copié !</div>
+<script src="app.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").then((reg) => {
+      reg.addEventListener("updatefound", () => {
+        const nw = reg.installing;
+        if (!nw) return;
+        nw.addEventListener("statechange", () => {
+          if (nw.state === "installed" && navigator.serviceWorker.controller) {
+            document.getElementById("update-banner").classList.remove("hidden");
+          }
+        });
+      });
+    });
+  });
+}
+document.getElementById("updateBtn").addEventListener("click", () => window.location.reload());
+</script>
+</body>
+</html>
